@@ -62,7 +62,7 @@ class Liquibase {
 	 * @param {*} params any parameters for the command
 	 * @returns {Promise} Promise of a node child process.
 	 */
-	run(action = 'update', params = '') {
+	run(action = '', params = '') {
 		return this._exec(`${this._command} ${action} ${params}`);
 	}
 
