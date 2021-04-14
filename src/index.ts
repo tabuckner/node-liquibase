@@ -2,7 +2,12 @@
 import { spawn } from 'child_process';
 import { join } from 'path';
 import { LiquibaseCommands } from './enums/liquibase-commands.enum';
-import { LiquibaseConfig, CalculateCheckSumCommandAttributes, UpdateCommandAttributes } from './models/index';
+import {
+	CalculateCheckSumCommandAttributes,
+	FutureRollbackCountSQLCommandAttributes, GenerateChangeLogCommandAttributes,
+	LiquibaseConfig,
+	UpdateCommandAttributes
+} from './models/index';
 
 
 export class Liquibase {
@@ -60,8 +65,33 @@ export class Liquibase {
 	 *
 	 * {@link https://docs.liquibase.com/commands/community/calculatechecksum.html Documentation}
 	 */
-	calculateCheckSum(params: CalculateCheckSumCommandAttributes) {
+	public calculateCheckSum(params: CalculateCheckSumCommandAttributes) {
 		this.run(LiquibaseCommands.CalculateCheckSum, params);
+	}
+
+	/**
+	 * The futureRollbackCountSQL <value> command generates the SQL that Liquibase would use to sequentially revert the number of changes associated with undeployed changesets, which are added to a changelog file.
+	 *
+	 * @param params Arguments/Attributes for the command
+	 *
+	 * @description The futureRollbackCountSQL <value> command is typically used to inspect the SQL before rolling back the number of changesets that you have not deployed to your database but added to your changelog. The command shows the output starting with the most recent changes until the value specified is reached.
+	 * It is best practice to inspect SQL, which Liquibase would run when using the rollback command so you can review any changes the command would make to your database.
+	 */
+	public futureRollbackCountSQL(params: FutureRollbackCountSQLCommandAttributes): void {
+		this.run(LiquibaseCommands.FutureRollbackCountSql, params);
+	}
+
+	/**
+	 * The generateChangeLog command creates a changelog file that has a sequence of changesets which describe how to re-create the current state of the database.
+	 *
+	 * @param params Arguments/Attributes for the command
+	 *
+	 * @description The generateChangeLog command is typically used when you want to capture the current state of a database, then apply those changes to any number of databases. This is typically only done when a project has an existing database, but hasn't used Liquibase before.
+	 *
+	 * {@link https://docs.liquibase.com/workflows/liquibase-community/existing-project.html Details}
+	 */
+	public generateChangeLog(params: GenerateChangeLogCommandAttributes): void {
+		this.run(LiquibaseCommands.GenerateChangeLog, params);
 	}
 
 	private stringifyParams(params: { [key: string]: any }) {
