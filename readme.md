@@ -1,14 +1,22 @@
-> Node.js wrapper for Liquibase
+![Website](https://img.shields.io/website?color=%09%23FFA500&up_message=liquibase.org&url=https%3A%2F%2Fwww.liquibase.org%2F)
+![Website](https://img.shields.io/website?color=%230000FF&label=docs&up_message=docs.liquibase.com&url=https%3A%2F%2Fdocs.liquibase.com%2F)
+![Twitter URL](https://img.shields.io/twitter/url?label=follow%20%40liquibase&style=social&url=https%3A%2F%2Ftwitter.com%2Fliquibase)
+![GitHub all releases](https://img.shields.io/github/downloads/liquibase/node-liquibase/total?logo=GitHub&style=flat-square)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/liquibase/node-liquibase?logo=GitHub)
+![GitHub repo size](https://img.shields.io/github/repo-size/liquibase/node-liquibase?logo=GitHub&style=flat-square)
 
+Use Node.js and databases? Want to do smart architecture decisions? Do not invent wheel, use Liquibase.
+Liquibase is an open-source database-independent library for tracking, managing and applying database schema changes.
 
-## Install
+## Installation
+There is an easy way to integrate Liquibase power to Node.js application. All you need
+is npm package.
 
-```
-$ npm install --save liquibase
-```
+`$ npm install --save liquibase`
 
 
 ## Usage
+Liquibase support rich pool of commands to keep your database up-to-date, like update, rollback, diff check out full list here: https://docs.liquibase.com/commands/home.html.
 ### CLI
 You can use this NPM package as a CLI tool under the namespace `node-liquibase` if you wish.
 #### Example
@@ -70,7 +78,7 @@ async function doEet() {
 }
 ```
 
-## Development
+## Want to help?
 This project needs some work on the infrastructure and build tooling side. For now the workflow to test an 'end user ready' version of the project, you'll first need to build/compile the code, and then you can run it using the Node CLI's REPL `node path/to/something.js`.
 
 There is an issue in path resolution within THIS application code in addition to the complexities in Liquibase Core. Until this is resolved the resolved path for the Liquibase executable will differ between compiled and source code. **This will affect your experience if you try to transpile the code on the fly using `ts-node`.** I have not resolved the issue yet.
