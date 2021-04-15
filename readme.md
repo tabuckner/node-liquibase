@@ -1,5 +1,5 @@
-![Website](https://img.shields.io/website?color=%09%23FFA500&up_message=liquibase.org&url=https%3A%2F%2Fwww.liquibase.org%2F)
-![Website](https://img.shields.io/website?color=%230000FF&label=docs&up_message=docs.liquibase.com&url=https%3A%2F%2Fdocs.liquibase.com%2F)
+![Website](https://img.shields.io/website?color=%233090C7&up_message=liquibase.org&url=https%3A%2F%2Fwww.liquibase.org%2F)
+![Website](https://img.shields.io/website?color=%233090C7&label=docs&up_message=docs.liquibase.com&url=https%3A%2F%2Fdocs.liquibase.com%2F)
 ![Twitter URL](https://img.shields.io/twitter/url?label=follow%20%40liquibase&style=social&url=https%3A%2F%2Ftwitter.com%2Fliquibase)
 ![GitHub all releases](https://img.shields.io/github/downloads/liquibase/node-liquibase/total?logo=GitHub&style=flat-square)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/liquibase/node-liquibase?logo=GitHub)
@@ -22,12 +22,24 @@ You can use this NPM package as a CLI tool under the namespace `node-liquibase` 
 #### Example
 ##### Bundled Liquibase Executable
 ```bash
-node-liquibase --changeLogFile="/examples/change-log-examples/postgreSQL/changelog.xml" --url="jdbc:postgresql://localhost:5432/postgres" --username="yourusername" --password="yoursecurepassword" --classpath="/Users/taylor/Dev/Liquibase/hackathons/node-liquibase/drivers/postgresql-42.2.8.jar" status
+node-liquibase
+--changeLogFile="/examples/change-log-examples/postgreSQL/changelog.xml"
+--url="jdbc:postgresql://localhost:5432/postgres"
+--username="yourusername"
+--password="yoursecurepassword"
+--classpath="/Users/taylor/Dev/Liquibase/hackathons/node-liquibase/drivers/postgresql-42.2.8.jar"
+status
 ```
 
 ##### Alternative Liquibase Executable
 ```bash
-node-liquibase /Users/taylor/Dev/Liquibase/hackathons/node-liquibase/bin/liquibase/liquibase --changeLogFile="/examples/change-log-examples/postgreSQL/changelog.xml" --url="jdbc:postgresql://localhost:5432/postgres" --username="yourusername" --password="yoursecurepassword" --classpath="/Users/taylor/Dev/Liquibase/hackathons/node-liquibase/drivers/postgresql-42.2.8.jar" status
+node-liquibase /Users/taylor/Dev/Liquibase/hackathons/node-liquibase/bin/liquibase/liquibase
+ --changeLogFile="/examples/change-log-examples/postgreSQL/changelog.xml"
+ --url="jdbc:postgresql://localhost:5432/postgres"
+ --username="yourusername"
+ --password="yoursecurepassword"
+ --classpath="/Users/taylor/Dev/Liquibase/hackathons/node-liquibase/drivers/postgresql-42.2.8.jar"
+ status
 ```
 
 ### In Your Project Files
