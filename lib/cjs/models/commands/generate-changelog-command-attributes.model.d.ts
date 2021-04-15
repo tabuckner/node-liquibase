@@ -12,7 +12,7 @@ export interface GenerateChangeLogCommandAttributes {
      */
     schemas?: Array<string>;
     /**
-     * Uses the names as schemaName instead of the real names on the generateChangeLog command.
+     * Uses the names as schemaName instead of the real names on the `generateChangeLog` command.
      */
     outputSchemaAs?: Array<string>;
     /**

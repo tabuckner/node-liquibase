@@ -12,7 +12,7 @@ export interface DiffCommandAttributes {
     /**
      * Starting with Liquibase 3.9.0, you can automate drift detection at scale in your database schemas
      * 	with the Liquibase Pro machine-readable JSON diff output.
-     * The diff --format=json command is a Liquibase Pro extension to the existing diff command.
+     * The diff --format=json command is a Liquibase Pro extension to the existing `diff` command.
      */
     format?: string;
 }
