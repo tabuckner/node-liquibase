@@ -2,6 +2,7 @@
 node_modules
 .nyc_output
 coverage
+.rts2_cache_*
 
 # Mac OS
 .DS_Store
